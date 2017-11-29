@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+var express=require("express");
+var app=express();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'H' });
-});
+var index=require("./form");
+//var login=require("./login");
+//var logins=require("./logins");
 
-module.exports = router;
+module.exports=function(app){
+    app.get("/",index);
+    //app.post("/login",login);
+    //app.get("/logins",logins);
+};
